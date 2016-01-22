@@ -1,0 +1,15 @@
+<template name="layout">
+
+    {{> navigation}}
+
+    <div class="container">
+	    <div class="row">
+		    <div class="alert alert-danger" role="alert">{{lastErrorMsg}}</div>
+    	</div>
+	    <div class="row">
+    		{{> yield}}
+    	</div>
+    </div>
+
+</template>
+

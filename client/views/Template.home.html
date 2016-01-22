@@ -1,0 +1,22 @@
+<!-- MAIN -->
+
+<template name="home">
+
+	{{#each s in servers}}
+    	<div class="col-sm-12 col-md-4">
+    		<button type="button" class="btn btn-default wide_button">{{ s.server }}</button>
+		</div>
+	{{/each}}
+
+    {{#if currentUser}}
+        {{> lists}}
+    {{/if}}
+    
+</template>
+
+
+<template name="server">
+   	<div class="col-sm-12 col-md-4">
+   		<button type="button" class="btn btn-warning">PriceCollector</button>
+   	</div>
+</template>
