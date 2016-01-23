@@ -1,22 +1,25 @@
 <!-- MAIN -->
-
 <template name="home">
-
-	{{#each s in servers}}
-    	<div class="col-sm-12 col-md-4">
-    		<button type="button" class="btn btn-default wide_button">{{ s.server }}</button>
-		</div>
-	{{/each}}
-
-    {{#if currentUser}}
-        {{> lists}}
-    {{/if}}
-    
+    <div class="mycontainer">
+        {{#transition in="zoomIn" out="bounceOut"}} 
+        {{#each s in servers}}
+        	{{> server_item s}}
+        {{/each}} 
+        {{/transition}}
+    </div>
 </template>
 
-
 <template name="server">
-   	<div class="col-sm-12 col-md-4">
-   		<button type="button" class="btn btn-warning">PriceCollector</button>
-   	</div>
+    <div class="col-sm-12 col-md-4">
+        <button type="button" class="btn btn-warning {{server}} ">PriceCollector</button>
+    </div>
+</template>
+
+<template name="server_item">
+    <div class="col-sm-12 col-md-4">
+        <button type="button" class="btn btn-default wide_button {{server}} ">{{ server }}</button>
+        <p class="PriceCollector">{{msgs_in}}</p>
+        <p>{{msgs_out}}</p>
+        <p>{{last_msg_time}}</p>
+    </div>
 </template>

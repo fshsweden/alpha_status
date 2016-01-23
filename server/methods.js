@@ -53,8 +53,6 @@ Meteor.methods({
   update_server_status: function(server_fields) {
 
     console.log("arg1:" + JSON.stringify(server_fields));
-    // console.log("arg2:" + JSON.stringify(fields));
-    // var o = JSON.parse("{\"askqty\":\"4\",\"product\":\"ABBN\",\"lastqty\":\"6\",\"last\":\"5\",\"bidqty\":\"77\",\"ask\":\"3\",\"bid\":\"2\"}");
     var o = JSON.parse(server_fields);
     console.log(JSON.stringify(o));
 
