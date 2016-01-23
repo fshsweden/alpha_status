@@ -1,6 +1,6 @@
 <!-- MAIN -->
 <template name="home">
-    <div class="mycontainer">
+    <div id="price_collector_div" class="mycontainer">
         {{#transition in="zoomIn" out="bounceOut"}} 
         {{#each s in servers}}
         	{{> server_item s}}
@@ -9,17 +9,11 @@
     </div>
 </template>
 
-<template name="server">
-    <div class="col-sm-12 col-md-4">
-        <button type="button" class="btn btn-warning {{server}} ">PriceCollector</button>
-    </div>
-</template>
-
 <template name="server_item">
-    <div class="col-sm-12 col-md-4">
-        <button type="button" class="btn btn-default wide_button {{server}} ">{{ server }}</button>
-        <p class="PriceCollector">{{msgs_in}}</p>
-        <p>{{msgs_out}}</p>
-        <p>{{last_msg_time}}</p>
+    <div class="col-sm-12 col-md-4 col-lg-4">
+        <button type="button" class="btn btn-default {{server}} mybutton ">{{ server }}</button>
+        <p class="in_count">{{msgs_in}}</p>
+        <p class="out_count">{{msgs_out}}</p>
+        <p class="last_msg">{{last_msg_time}}</p>
     </div>
 </template>
