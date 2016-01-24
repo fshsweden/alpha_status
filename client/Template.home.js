@@ -9,11 +9,23 @@ Template.home.helpers({
     }
 });
 
-Template.server_item.rendered = function() {
-    var instance = this;
-    console.log("rendered:" + instance);
-};
+Template.home.onRendered(function() {
+  var query = Servers.find({});
 
+  var handle = query.observeChanges({
+    changed: function (id, fields) {
+      //this will highlight the row of the updated favorite, using the id from the Favorites collection
+
+      for (f in fields) {
+          $('#' + id + "-" + f).effect('highlight', {}, 1500);
+      }
+      //$('#' + id).animate({backgroundColor: "#ff0000" });
+    }
+  });
+});
+
+
+/*
 Tracker.autorun(function() {
     console.log("Tracker.autorun");
     Servers.find().observe({
@@ -26,3 +38,4 @@ Tracker.autorun(function() {
     }
   });
 });
+*/

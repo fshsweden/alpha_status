@@ -9,11 +9,18 @@
     </div>
 </template>
 
-<template name="server_item">
+<template name="server_item_old">
     <div class="col-sm-12 col-md-4 col-lg-4">
         <button type="button" class="btn btn-default {{server}} mybutton ">{{ server }}</button>
         <p class="in_count">{{msgs_in}}</p>
         <p class="out_count">{{msgs_out}}</p>
         <p class="last_msg">{{last_msg_time}}</p>
+    </div>
+</template>
+
+<template name="server_item">
+    <div class="row" >
+        <div id="{{_id}}-server"  class="col-xs-6 symbol">{{server}}</div>
+        <div id="{{_id}}-msgs_in" class="col-xs-6 quote">{{msgs_in}}</div>
     </div>
 </template>
