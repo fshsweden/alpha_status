@@ -24,3 +24,23 @@
         <div id="{{_id}}-msgs_in" class="col-xs-6 quote">{{msgs_in}}</div>
     </div>
 </template>
+
+
+<template name="price_table">
+	<table>
+		{{#each r in price_rows}}
+        	{{> price_row r}}
+        {{/each}}
+	</table>
+</template>
+
+<template name="price_row">
+	<tr>
+		<td>{{bidqty}}</td>
+		<td>{{bid}}</td>
+		<td>{{ask}}</td>
+		<td>{{askqty}}</td>
+		<td>{{last}}</td>
+		<td>{{lastqty}}</td>
+	</tr>
+</template>

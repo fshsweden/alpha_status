@@ -14,8 +14,6 @@ Template.home.onRendered(function() {
 
   var handle = query.observeChanges({
     changed: function (id, fields) {
-      //this will highlight the row of the updated favorite, using the id from the Favorites collection
-
       for (f in fields) {
           $('#' + id + "-" + f).effect('highlight', {}, 1500);
       }
